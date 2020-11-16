@@ -1,0 +1,11 @@
+.formposition{
+    padding-left: 25%;
+    padding-top: 100px;
+}
+.submitbtn{
+    margin-left: 160px;
+}
+.mandatorytxt{
+    padding-left:5px;
+    color: red;
+}

@@ -1,0 +1,43 @@
+<form [formGroup]="profileForm" class="formposition">
+    <table style="width:100%">
+        <tr>
+            <th> Name:</th>
+            <th><input type="text" formControlName="Name" required><span class="mandatorytxt">*</span></th>
+        </tr><br>
+
+        <tr>
+            <th>Address:</th>
+            <th><input type="text" formControlName="Address"></th>
+        </tr><br>
+
+        <tr>
+            <th>Email:</th>
+            <th><input type="text" formControlName="Email" required><span class="mandatorytxt">*</span><br>
+                <span *ngIf="EmailValid" class="mandatorytxt">{{mailValid}}</span></th>
+        </tr><br>
+
+        <tr>
+            <th>User Name:</th>
+            <th><input type="text" formControlName="userName" required><span class="mandatorytxt">*</span><br>
+                <span *ngIf="userNamevalid" class="mandatorytxt">Username already used</span></th>
+        </tr><br>
+        <tr>
+            <th>Password:</th>
+            <th><input type="text" formControlName="Password" required><span class="mandatorytxt">*</span></th>
+        </tr><br>
+
+        <tr>
+            <th>Gender:</th>
+            <th><input type="radio" formControlName="Gender" id="male" value="Male" required>
+                <label for="male">Male</label>&nbsp;
+                <input type="radio" formControlName="Gender" id="female" value="Female" required>
+                <label for="female">Female</label><span class="mandatorytxt">*</span></th>
+        </tr><br>
+
+      </table>
+
+    
+    <button class="submitbtn" type="submit" [disabled]="!profileForm.valid" (click)="onSubmit()">Submit</button>
+    <p><span class="mandatorytxt">*</span>Mandatory Fields</p>
+  
+  </form>
